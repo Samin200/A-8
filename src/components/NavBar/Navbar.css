@@ -1,5 +1,19 @@
 .hover-effect:hover {
-  color: #4f46e5;
+  color: transparent;
+  background: linear-gradient(to bottom right,#632EE3 , #9F62F2);
+  background-clip: text;
   text-decoration: underline;
   font-weight:600;
+  
 }
+.show-menu{
+    display:flex;
+    bottom: -90px;
+    padding: 7px;
+    padding-left: 9px;
+    padding-right: 20px;
+
+    align-items: start;
+    border-radius: 10px;
+
+  }

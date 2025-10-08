@@ -1,0 +1,362 @@
+[
+  {
+    "image": "https://logo.clearbit.com/spotify.com?size=128",
+    "title": "Spotify: Music and Podcasts",
+    "companyName": "Spotify Ltd.",
+    "id": 1,
+    "description": "Stream music and podcasts, discover new artists, and listen offline anywhere.",
+    "size": 120,
+    "reviews": 25000000,
+    "ratingAvg": 4.7,
+    "downloads": "1B+",
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 800000 },
+      { "name": "3 star", "count": 1500000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 18200000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/netflix.com?size=128",
+    "title": "Netflix: Stream Movies & TV Shows",
+    "companyName": "Netflix Inc.",
+    "id": 2,
+    "description": "Watch your favorite movies, TV shows, and exclusive Netflix Originals anytime.",
+    "size": 90,
+    "reviews": 21000000,
+    "ratingAvg": 4.5,
+    "downloads": "1B+",
+    "ratings": [
+      { "name": "1 star", "count": 700000 },
+      { "name": "2 star", "count": 900000 },
+      { "name": "3 star", "count": 1600000 },
+      { "name": "4 star", "count": 4200000 },
+      { "name": "5 star", "count": 13600000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/instagram.com?size=128",
+    "title": "Instagram: Share Photos & Reels",
+    "companyName": "Meta Platforms, Inc.",
+    "id": 3,
+    "description": "Connect, share photos, videos, and reels with friends and creators worldwide.",
+    "size": 110,
+    "reviews": 37000000,
+    "ratingAvg": 4.4,
+    "downloads": "5B+",
+    "ratings": [
+      { "name": "1 star", "count": 2000000 },
+      { "name": "2 star", "count": 2500000 },
+      { "name": "3 star", "count": 5000000 },
+      { "name": "4 star", "count": 7000000 },
+      { "name": "5 star", "count": 21000000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/youtube.com?size=128",
+    "title": "YouTube: Watch and Create",
+    "companyName": "Google LLC",
+    "id": 4,
+    "description": "Watch, upload, and share videos, music, and vlogs from creators around the world.",
+    "size": 135,
+    "reviews": 60000000,
+    "ratingAvg": 4.6,
+    "downloads": "10B+",
+    "ratings": [
+      { "name": "1 star", "count": 2500000 },
+      { "name": "2 star", "count": 3500000 },
+      { "name": "3 star", "count": 6000000 },
+      { "name": "4 star", "count": 10000000 },
+      { "name": "5 star", "count": 38000000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/whatsapp.com?size=128",
+    "title": "WhatsApp: Chat and Calls",
+    "companyName": "Meta Platforms, Inc.",
+    "id": 5,
+    "description": "Fast, simple, and secure messaging and calling for free, available worldwide.",
+    "size": 95,
+    "reviews": 32000000,
+    "ratingAvg": 4.8,
+    "downloads": "5B+",
+    "ratings": [
+      { "name": "1 star", "count": 1000000 },
+      { "name": "2 star", "count": 1500000 },
+      { "name": "3 star", "count": 3000000 },
+      { "name": "4 star", "count": 7000000 },
+      { "name": "5 star", "count": 19500000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/tiktok.com?size=128",
+    "title": "TikTok: Short Video Platform",
+    "companyName": "ByteDance Ltd.",
+    "id": 6,
+    "description": "Create and explore short videos with music, effects, and trending content.",
+    "size": 150,
+    "reviews": 41000000,
+    "ratingAvg": 4.3,
+    "downloads": "3B+",
+    "ratings": [
+      { "name": "1 star", "count": 3000000 },
+      { "name": "2 star", "count": 4000000 },
+      { "name": "3 star", "count": 7000000 },
+      { "name": "4 star", "count": 10000000 },
+      { "name": "5 star", "count": 17000000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/twitter.com?size=128",
+    "title": "X (Twitter): News and Discussions",
+    "companyName": "X Corp.",
+    "id": 7,
+    "description": "Join the global conversation with real-time news, opinions, and trending topics.",
+    "size": 80,
+    "reviews": 15000000,
+    "ratingAvg": 4.2,
+    "downloads": "1B+",
+    "ratings": [
+      { "name": "1 star", "count": 1000000 },
+      { "name": "2 star", "count": 1500000 },
+      { "name": "3 star", "count": 2500000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 6000000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/telegram.org?size=128",
+    "title": "Telegram: Fast Messaging",
+    "companyName": "Telegram FZ-LLC",
+    "id": 8,
+    "description": "Cloud-based instant messaging app with privacy, speed, and powerful group tools.",
+    "size": 85,
+    "reviews": 12000000,
+    "ratingAvg": 4.7,
+    "downloads": "1B+",
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 700000 },
+      { "name": "3 star", "count": 1500000 },
+      { "name": "4 star", "count": 3000000 },
+      { "name": "5 star", "count": 6300000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/zoom.us?size=128",
+    "title": "Zoom: Video Meetings",
+    "companyName": "Zoom Video Communications, Inc.",
+    "id": 9,
+    "description": "Host and join secure video meetings, webinars, and online collaborations easily.",
+    "size": 100,
+    "reviews": 9500000,
+    "ratingAvg": 4.5,
+    "downloads": "500M+",
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 500000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 2200000 },
+      { "name": "5 star", "count": 5600000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/google.com?size=128",
+    "title": "Gmail: Email by Google",
+    "companyName": "Google LLC",
+    "id": 10,
+    "description": "Secure, smart, and easy-to-use email app with organized inbox and spam protection.",
+    "size": 75,
+    "reviews": 28000000,
+    "ratingAvg": 4.6,
+    "downloads": "10B+",
+    "ratings": [
+      { "name": "1 star", "count": 800000 },
+      { "name": "2 star", "count": 1200000 },
+      { "name": "3 star", "count": 2500000 },
+      { "name": "4 star", "count": 5500000 },
+      { "name": "5 star", "count": 18000000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/snapchat.com?size=128",
+    "title": "Snapchat: Share the Moment",
+    "companyName": "Snap Inc.",
+    "id": 11,
+    "description": "Send Snaps, chat, and share stories with friends in a fun and creative way.",
+    "size": 100,
+    "reviews": 22000000,
+    "ratingAvg": 4.3,
+    "downloads": "5B+",
+    "ratings": [
+      { "name": "1 star", "count": 1500000 },
+      { "name": "2 star", "count": 2000000 },
+      { "name": "3 star", "count": 3000000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 11500000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/discord.com?size=128",
+    "title": "Discord: Chat for Gamers",
+    "companyName": "Discord Inc.",
+    "id": 12,
+    "description": "Voice, video, and text chat app for gamers and communities.",
+    "size": 150,
+    "reviews": 18000000,
+    "ratingAvg": 4.7,
+    "downloads": "500M+",
+    "ratings": [
+      { "name": "1 star", "count": 700000 },
+      { "name": "2 star", "count": 900000 },
+      { "name": "3 star", "count": 1200000 },
+      { "name": "4 star", "count": 2500000 },
+      { "name": "5 star", "count": 12700000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/duolingo.com?size=128",
+    "title": "Duolingo: Learn Languages",
+    "companyName": "Duolingo Inc.",
+    "id": 13,
+    "description": "Learn new languages through fun mini-games and daily challenges.",
+    "size": 80,
+    "reviews": 16000000,
+    "ratingAvg": 4.8,
+    "downloads": "500M+",
+    "ratings": [
+      { "name": "1 star", "count": 300000 },
+      { "name": "2 star", "count": 500000 },
+      { "name": "3 star", "count": 1000000 },
+      { "name": "4 star", "count": 2500000 },
+      { "name": "5 star", "count": 11700000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/spotifyforartists.com?size=128",
+    "title": "Spotify for Artists: Music Management",
+    "companyName": "Spotify Ltd.",
+    "id": 14,
+    "description": "Manage your artist profile, track stats, and engage with listeners.",
+    "size": 70,
+    "reviews": 600000,
+    "ratingAvg": 4.5,
+    "downloads": "5M+",
+    "ratings": [
+      { "name": "1 star", "count": 20000 },
+      { "name": "2 star", "count": 30000 },
+      { "name": "3 star", "count": 80000 },
+      { "name": "4 star", "count": 150000 },
+      { "name": "5 star", "count": 320000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/reddit.com?size=128",
+    "title": "Reddit: Dive into Anything",
+    "companyName": "Reddit Inc.",
+    "id": 15,
+    "description": "Join communities, share interests, and explore trending discussions online.",
+    "size": 95,
+    "reviews": 10000000,
+    "ratingAvg": 4.5,
+    "downloads": "100M+",
+    "ratings": [
+      { "name": "1 star", "count": 400000 },
+      { "name": "2 star", "count": 600000 },
+      { "name": "3 star", "count": 900000 },
+      { "name": "4 star", "count": 1800000 },
+      { "name": "5 star", "count": 7200000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/pinterest.com?size=128",
+    "title": "Pinterest: Discover Ideas",
+    "companyName": "Pinterest Inc.",
+    "id": 16,
+    "description": "Find inspiration for DIY projects, fashion, food, and home décor.",
+    "size": 105,
+    "reviews": 13000000,
+    "ratingAvg": 4.7,
+    "downloads": "1B+",
+    "ratings": [
+      { "name": "1 star", "count": 500000 },
+      { "name": "2 star", "count": 700000 },
+      { "name": "3 star", "count": 1200000 },
+      { "name": "4 star", "count": 2500000 },
+      { "name": "5 star", "count": 8300000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/notion.so?size=128",
+    "title": "Notion: Notes and Tasks",
+    "companyName": "Notion Labs Inc.",
+    "id": 17,
+    "description": "All-in-one workspace for notes, projects, and collaboration.",
+    "size": 120,
+    "reviews": 4000000,
+    "ratingAvg": 4.8,
+    "downloads": "50M+",
+    "ratings": [
+      { "name": "1 star", "count": 80000 },
+      { "name": "2 star", "count": 100000 },
+      { "name": "3 star", "count": 200000 },
+      { "name": "4 star", "count": 700000 },
+      { "name": "5 star", "count": 2900000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/forestapp.cc?size=128",
+    "title": "Forest: Focus for Productivity",
+    "companyName": "Seekrtech",
+    "id": 18,
+    "description": "Stay focused and beat phone addiction by growing virtual trees while you work or study.",
+    "size": 105,
+    "reviews": 2400000,
+    "ratingAvg": 4.8,
+    "downloads": "10M+",
+    "ratings": [
+      { "name": "1 star", "count": 50000 },
+      { "name": "2 star", "count": 70000 },
+      { "name": "3 star", "count": 100000 },
+      { "name": "4 star", "count": 300000 },
+      { "name": "5 star", "count": 1880000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/capcut.com?size=128",
+    "title": "CapCut: Video Editor",
+    "companyName": "Bytedance Pte. Ltd.",
+    "id": 19,
+    "description": "Create and edit videos with filters, music, and professional effects easily.",
+    "size": 160,
+    "reviews": 22000000,
+    "ratingAvg": 4.6,
+    "downloads": "500M+",
+    "ratings": [
+      { "name": "1 star", "count": 700000 },
+      { "name": "2 star", "count": 900000 },
+      { "name": "3 star", "count": 1600000 },
+      { "name": "4 star", "count": 4000000 },
+      { "name": "5 star", "count": 14800000 }
+    ]
+  },
+  {
+    "image": "https://logo.clearbit.com/spotifykids.com?size=128",
+    "title": "Spotify Kids: Music for Children",
+    "companyName": "Spotify Ltd.",
+    "id": 20,
+    "description": "A fun, kid-friendly music app with songs, playlists, and audio stories for children.",
+    "size": 90,
+    "reviews": 800000,
+    "ratingAvg": 4.6,
+    "downloads": "10M+",
+    "ratings": [
+      { "name": "1 star", "count": 20000 },
+      { "name": "2 star", "count": 30000 },
+      { "name": "3 star", "count": 60000 },
+      { "name": "4 star", "count": 150000 },
+      { "name": "5 star", "count": 540000 }
+    ]
+  }
+]
