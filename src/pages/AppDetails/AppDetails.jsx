@@ -43,8 +43,8 @@ const handleInstalledApps = () => {
   const allApps = JSON.parse(localStorage.getItem("AllApps"));
   const updatedApps = allApps.filter(a => updatedIds.includes(a.id));
 
-  setInstalledApps(updatedApps); // 🔥 updates context immediately
-  setIsInstalled(true);          // 🔥 disables button instantly
+  setInstalledApps(updatedApps);
+  setIsInstalled(true);         
   toast.success(`${app.title} installed successfully`);
 };
 
@@ -52,10 +52,10 @@ const handleInstalledApps = () => {
 
   return (
     <div className="  bg-[#F5F5F5] py-[40px] px-[80px]  sm:py-[80px] max-sm:px-[20px] text-[#001931] flex flex-col gap-[40px]">
-      <div className="flex gap-[40px]">
+      <div className="flex gap-[40px] max-sm:flex-col">
         <div>
           <img
-            className="sm:min-w-[350px] sm:min-h-[350px]"
+            className="sm:min-w-[350px] sm:min-h-[350px] max-sm:w-[100px]"
             src={app.image}
             alt=""
           />
@@ -71,12 +71,12 @@ const handleInstalledApps = () => {
             </div>
           </div>
           <div className=" border-t border-gray-300"></div>
-          <div className="flex gap-[70px]">
-            <div className="flex flex-col gap-[8px] items-start">
+          <div className="flex sm:gap-[70px] max-sm:gap-[10px]  max-sm:justify-center flex-wrap">
+            <div className="flex flex-col gap-[8px] sm:items-start items-center">
               <div>
                 <img
                   className="w-[40px] h-[40px]"
-                  src="/assets/icon-downloads.png"
+                  src="/src/assets/icon-downloads.png"
                   alt=""
                 />
               </div>
@@ -85,11 +85,11 @@ const handleInstalledApps = () => {
                 {app.downloads}
               </div>
             </div>
-            <div className="flex flex-col gap-[8px] items-start">
+            <div className="flex flex-col gap-[8px] sm:items-start items-center text-wrap">
               <div>
                 <img
                   className="w-[40px] h-[40px]"
-                  src="/assets/icon-ratings.png"
+                  src="/src/assets/icon-ratings.png"
                   alt=""
                 />
               </div>
@@ -98,11 +98,11 @@ const handleInstalledApps = () => {
                 {app.ratingAvg}
               </div>
             </div>
-            <div className="flex flex-col gap-[8px] items-start">
+            <div className="flex flex-col gap-[8px] sm:items-start items-center text-wrap">
               <div>
                 <img
                   className="w-[40px] h-[40px]"
-                  src="/assets/icon-review.png"
+                  src="/src/assets/icon-review.png"
                   alt=""
                 />
               </div>
@@ -114,15 +114,16 @@ const handleInstalledApps = () => {
           </div>
           <div>
             <button
-  onClick={handleInstalledApps}
-  disabled={isInstalled}
-  className={`text-white text-[16px] font-semibold py-[12px] px-[16px] rounded-[5px] ${
-    isInstalled ? "bg-gray-400 cursor-not-allowed" : "bg-[#00D390] hover:bg-[#16a678]"
-  }`}
->
-  {isInstalled ? "Installed" : `Install Now ( ${app.size} MB )`}
-</button>
-
+              onClick={handleInstalledApps}
+              disabled={isInstalled}
+              className={`text-white text-[16px] font-semibold py-[12px] px-[16px] rounded-[5px] ${
+                isInstalled
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#00D390] hover:bg-[#16a678]"
+              }`}
+            >
+              {isInstalled ? "Installed" : `Install Now ( ${app.size} MB )`}
+            </button>
           </div>
         </div>
       </div>
