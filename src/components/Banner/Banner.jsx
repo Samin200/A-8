@@ -20,11 +20,11 @@ const Banner = () => {
         </div>
       </div>
       <div className="text-black flex gap-[16px]">
-        <div
+        <a href='https://play.google.com/store/games?hl=en' 
           className="flex gap-[4px] sm:gap-[10px] px-[10px] sm:px-[24px] py-1 sm:py-[12px]
         border-1 border-[#D2D2D2] rounded-[10px] items-center"
         >
-          <div>
+          <div >
             <img
               className="sm:w-[26.95px] sm:h-[30.8px] w-[18px]"
               src="https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-five-educational-android-apps-for-chromebooks-5.png"
@@ -32,8 +32,8 @@ const Banner = () => {
             />
           </div>
           <div className="text-[14px] sm:text-[20px] font-semibold max-sm:text-center">Google Play</div>
-        </div>
-        <div className="flex gap-[4px] sm:gap-[10px] px-[10px] sm:px-[24px] py-1 sm:py-[12px] border-1 border-[#D2D2D2] rounded-[10px] items-center">
+        </a>
+        <a href='https://www.apple.com/app-store/' className="flex gap-[4px] sm:gap-[10px] px-[10px] sm:px-[24px] py-1 sm:py-[12px] border-1 border-[#D2D2D2] rounded-[10px] items-center">
           <div>
             <img
               className="sm:w-[32px] sm:h-[32px] w-[21px]"
@@ -42,7 +42,7 @@ const Banner = () => {
             />
           </div>
           <div className="text-[14px] sm:text-[20px] font-semibold max-sm:text-center">App Store</div>
-        </div>
+        </a>
       </div> 
         </>
     );

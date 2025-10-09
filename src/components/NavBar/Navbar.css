@@ -4,6 +4,13 @@
   background-clip: text;
   text-decoration: underline;
   font-weight:600;
+}
+.click-effect {
+  color: transparent;
+  background: linear-gradient(to bottom right,#632EE3 , #9F62F2);
+  background-clip: text;
+  text-decoration: underline;
+  font-weight:600;
   
 }
 .show-menu{

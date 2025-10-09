@@ -4,22 +4,24 @@ import { Outlet } from "react-router";
 import Footer from "../../components/Footer/Footer";
 import ScrollToTop from "../../components/ScrollUp/ScrollUp";
 import { CurrentApp, InstalledAppsContext } from "../../components/Context/Context";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Root = () => {
   const [installedApps, setInstalledApps] = useState([]);
   const [currentApp, setCurrentApp] = useState([]);
+
   return (
     <div className="inter">
-      <Navbar></Navbar>
-      <ScrollToTop></ScrollToTop>
+      <Navbar />
+      <ToastContainer position="top-right" autoClose={3000} />
+      <ScrollToTop />
       <InstalledAppsContext.Provider value={[installedApps, setInstalledApps]}>
         <CurrentApp.Provider value={[currentApp, setCurrentApp]}>
-            <Outlet></Outlet>
+          <Outlet />
         </CurrentApp.Provider>
       </InstalledAppsContext.Provider>
-
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

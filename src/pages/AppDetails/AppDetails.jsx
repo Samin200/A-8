@@ -1,16 +1,57 @@
-import { CurrentApp } from "../../components/Context/Context";
+import { toast } from "react-toastify";
+
+import {
+  CurrentApp,
+  InstalledAppsContext,
+} from "../../components/Context/Context";
 import { useLoaderData, useParams } from "react-router";
 import RatingsChart from "../../components/RatingsChart/RatingsChart";
 import AppNotFound from "../AppNotFound/AppNotFound";
+import { useContext, useEffect, useState } from "react";
+import { getInstall } from "../../components/localStorage/localStorage";
 
 const AppDetails = () => {
   const apps = useLoaderData();
+  const [isInstalled, setIsInstalled] = useState(false);
+
   const { id } = useParams();
   const app = apps.find((a) => a.id === parseInt(id));
-  console.log(id);
-  if (id >= apps.length){
-    return <AppNotFound></AppNotFound>
-  } 
+  const [installedApps, setInstalledApps] = useContext(InstalledAppsContext);
+
+useEffect(() => {
+  const installedIds = getInstall();
+  if (installedIds.includes(app.id)) {
+    setIsInstalled(true);
+  }
+}, [app.id]);
+
+
+
+  if (!app) {
+    return <AppNotFound />;
+  }
+
+const handleInstalledApps = () => {
+  const installedIds = getInstall();
+
+  if (installedIds.includes(app.id)) {
+    toast.info(`${app.title} is already installed`);
+    return;
+  }
+
+  const updatedIds = [...installedIds, app.id];
+  localStorage.setItem("Installed", JSON.stringify(updatedIds));
+
+  const allApps = JSON.parse(localStorage.getItem("AllApps"));
+  const updatedApps = allApps.filter(a => updatedIds.includes(a.id));
+
+  setInstalledApps(updatedApps); // 🔥 updates context immediately
+  setIsInstalled(true);          // 🔥 disables button instantly
+  toast.success(`${app.title} installed successfully`);
+};
+
+
+
   return (
     <div className="  bg-[#F5F5F5] py-[40px] px-[80px]  sm:py-[80px] max-sm:px-[20px] text-[#001931] flex flex-col gap-[40px]">
       <div className="flex gap-[40px]">
@@ -74,9 +115,16 @@ const AppDetails = () => {
             </div>
           </div>
           <div>
-            <button className=" text-white text-[16px] font-semibold bg-[#00D390] py-[12px] px-[16px] rounded-[5px] ">
-              Install Now ( {app.size} MB )
-            </button>
+            <button
+  onClick={handleInstalledApps}
+  disabled={isInstalled}
+  className={`text-white text-[16px] font-semibold py-[12px] px-[16px] rounded-[5px] ${
+    isInstalled ? "bg-gray-400 cursor-not-allowed" : "bg-[#00D390] hover:bg-[#16a678]"
+  }`}
+>
+  {isInstalled ? "Installed" : `Install Now ( ${app.size} MB )`}
+</button>
+
           </div>
         </div>
       </div>
