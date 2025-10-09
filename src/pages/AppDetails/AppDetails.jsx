@@ -19,11 +19,9 @@ const AppDetails = () => {
   const [installedApps, setInstalledApps] = useContext(InstalledAppsContext);
 
 useEffect(() => {
-  const installedIds = getInstall();
-  if (installedIds.includes(app.id)) {
-    setIsInstalled(true);
-  }
-}, [app.id]);
+  setIsInstalled(installedApps.some(a => a.id === app.id));
+}, [installedApps, app.id]);
+
 
 
 
