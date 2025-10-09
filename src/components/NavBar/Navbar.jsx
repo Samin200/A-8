@@ -5,6 +5,7 @@ import "./Navbar.css";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router";
+import logo from "../../assets/logo.png";
 const Navbar = () => {
   const [drawer, setDrawer] = useState(false);
   const [currentClicked, setCurrentClicked] = useState(0);
@@ -18,7 +19,7 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBars} />
         </div>
         <div>
-          <img className=" w-[40px]" src="/src/assets/logo.png" alt="" />
+          <img className=" w-[40px]" src={logo} alt="" />
         </div>
         <div className=" text-[16px] text-transparent bg-linear-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text  font-bold">
           HERO.IO

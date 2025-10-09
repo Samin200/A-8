@@ -1,5 +1,4 @@
 import { toast } from "react-toastify";
-
 import {
   CurrentApp,
   InstalledAppsContext,
@@ -9,6 +8,9 @@ import RatingsChart from "../../components/RatingsChart/RatingsChart";
 import AppNotFound from "../AppNotFound/AppNotFound";
 import { useContext, useEffect, useState } from "react";
 import { getInstall } from "../../components/localStorage/localStorage";
+import iconDownloads from "../../../src/assets/icon-downloads.png";
+import iconRatings from "../../../src/assets/icon-ratings.png";
+import iconReview from "../../../src/assets/icon-review.png";
 
 const AppDetails = () => {
   const apps = useLoaderData();
@@ -18,37 +20,40 @@ const AppDetails = () => {
   const app = apps.find((a) => a.id === parseInt(id));
   const [installedApps, setInstalledApps] = useContext(InstalledAppsContext);
 
-useEffect(() => {
-  setIsInstalled(installedApps.some(a => a.id === app.id));
-}, [installedApps, app.id]);
-
-
-
+  useEffect(() => {
+    setIsInstalled(installedApps.some((a) => a.id === app.id));
+  }, [installedApps, app.id]);
 
   if (!app) {
     return <AppNotFound />;
   }
 
-const handleInstalledApps = () => {
-  const installedIds = getInstall();
+  const handleInstalledApps = () => {
+    const installedIds = getInstall();
 
-  if (installedIds.includes(app.id)) {
-    toast.info(`${app.title} is already installed`);
-    return;
-  }
+    if (installedIds.includes(app.id)) {
+      toast.info(`${app.title} is already installed`);
+      return;
+    }
 
-  const updatedIds = [...installedIds, app.id];
-  localStorage.setItem("Installed", JSON.stringify(updatedIds));
+    const updatedIds = [...installedIds, app.id];
+    if (typeof window !== "undefined" && window.localStorage) {
+      window.localStorage.setItem("Installed", JSON.stringify(updatedIds));
+    }
 
-  const allApps = JSON.parse(localStorage.getItem("AllApps"));
-  const updatedApps = allApps.filter(a => updatedIds.includes(a.id));
+    // Prefer using loader-provided apps (useLoaderData in routes) if available via 'apps'
+    const allApps =
+      Array.isArray(apps) && apps.length
+        ? apps
+        : typeof window !== "undefined" && window.localStorage
+        ? JSON.parse(window.localStorage.getItem("AllApps") || "[]")
+        : [];
+    const updatedApps = allApps.filter((a) => updatedIds.includes(a.id));
 
-  setInstalledApps(updatedApps);
-  setIsInstalled(true);         
-  toast.success(`${app.title} installed successfully`);
-};
-
-
+    setInstalledApps(updatedApps);
+    setIsInstalled(true);
+    toast.success(`${app.title} installed successfully`);
+  };
 
   return (
     <div className="  bg-[#F5F5F5] py-[40px] px-[80px]  sm:py-[80px] max-sm:px-[20px] text-[#001931] flex flex-col gap-[40px]">
@@ -74,11 +79,7 @@ const handleInstalledApps = () => {
           <div className="flex sm:gap-[70px] max-sm:gap-[10px]  max-sm:justify-center flex-wrap">
             <div className="flex flex-col gap-[8px] sm:items-start items-center">
               <div>
-                <img
-                  className="w-[40px] h-[40px]"
-                  src="/src/assets/icon-downloads.png"
-                  alt=""
-                />
+                <img className="w-[40px] h-[40px]" src={iconDownloads} alt="" />
               </div>
               <div className="text-[16px] text-[#314558]">Downloads</div>
               <div className="font-extrabold text-[40px] mt-[-14px]">
@@ -87,11 +88,7 @@ const handleInstalledApps = () => {
             </div>
             <div className="flex flex-col gap-[8px] sm:items-start items-center text-wrap">
               <div>
-                <img
-                  className="w-[40px] h-[40px]"
-                  src="/src/assets/icon-ratings.png"
-                  alt=""
-                />
+                <img className="w-[40px] h-[40px]" src={iconRatings} alt="" />
               </div>
               <div className="text-[16px] text-[#314558]">Average Ratings</div>
               <div className="font-extrabold text-[40px] mt-[-14px]">
@@ -100,11 +97,7 @@ const handleInstalledApps = () => {
             </div>
             <div className="flex flex-col gap-[8px] sm:items-start items-center text-wrap">
               <div>
-                <img
-                  className="w-[40px] h-[40px]"
-                  src="/src/assets/icon-review.png"
-                  alt=""
-                />
+                <img className="w-[40px] h-[40px]" src={iconReview} alt="" />
               </div>
               <div className="text-[16px] text-[#314558]">Total Reviews</div>
               <div className="font-extrabold text-[40px] mt-[-14px]">

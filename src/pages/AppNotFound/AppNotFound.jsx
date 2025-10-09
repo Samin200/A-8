@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router";
+import appError from "../../../src/assets/App-Error.png";
 
 const AppNotFound = () => {
   return (
     <div className=" py-[40px]  sm:py-[80px] bg-[#F5F5F5] flex flex-col items-center max-sm:px-[20px]">
       <div>
-        <img src="/src/assets/App-Error.png" alt="" />
+        <img src={appError} alt="" />
       </div>
       <div className="font-bold text-[48px] text-[#001931] text-center  pb-[16px] text-wrap ">
         Oops, page not found!

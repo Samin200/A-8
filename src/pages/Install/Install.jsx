@@ -1,7 +1,8 @@
 import InstalledAppsCard from "../../components/Apps/InstalledAppsCard";
 import { InstalledAppsContext } from "../../components/Context/Context";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useMemo } from "react";
 import { getInstall } from "../../components/localStorage/localStorage";
+import { useLoaderData } from "react-router";
 
 const Install = () => {
   const [installedApps] = useContext(InstalledAppsContext);
@@ -18,29 +19,45 @@ const parseCount = (value) => {
 };
 
 
+  const appsFromLoader = useLoaderData();
+
+  const memoApps = useMemo(() => appsFromLoader || [], [appsFromLoader]);
+
   useEffect(() => {
-  setIsSorting(true);
-  const installedIds = getInstall();
+    setIsSorting(true);
+    const installedIds = getInstall();
 
-  let baseApps = installedApps;
+    let baseApps = installedApps;
 
-  if (installedApps.length === 0 && installedIds.length > 0) {
-    const allApps = JSON.parse(localStorage.getItem("AllApps"));
-    if (allApps) {
-      baseApps = allApps.filter(app => installedIds.includes(app.id));
+    // If installedApps isn't populated (e.g. on refresh), build it from loader data and installed ids
+    if (
+      (installedApps.length === 0 || !installedApps) &&
+      installedIds.length > 0
+    ) {
+      const allApps = memoApps.length
+        ? memoApps
+        : typeof window !== "undefined" && window.localStorage
+        ? JSON.parse(window.localStorage.getItem("AllApps") || "[]")
+        : [];
+      if (allApps && allApps.length) {
+        baseApps = allApps.filter((app) => installedIds.includes(app.id));
+      }
     }
-  }
 
-  let sorted = [...baseApps];
-  if (sortOrder === "asc") {
-    sorted = sorted.slice().sort((a, b) => parseCount(a.downloads) - parseCount(b.downloads));
-  } else if (sortOrder === "desc") {
-    sorted = sorted.slice().sort((a, b) => parseCount(b.downloads) - parseCount(a.downloads));
-  }
+    let sorted = [...baseApps];
+    if (sortOrder === "asc") {
+      sorted = sorted
+        .slice()
+        .sort((a, b) => parseCount(a.downloads) - parseCount(b.downloads));
+    } else if (sortOrder === "desc") {
+      sorted = sorted
+        .slice()
+        .sort((a, b) => parseCount(b.downloads) - parseCount(a.downloads));
+    }
 
-  setSortedApps(sorted);
-  setIsSorting(false);
-}, [sortOrder, installedApps]);
+    setSortedApps(sorted);
+    setIsSorting(false);
+  }, [sortOrder, installedApps, memoApps]);
 
 ;
 

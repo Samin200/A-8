@@ -1,6 +1,14 @@
 const getInstall = () => {
-  const stored = localStorage.getItem("Installed");
-  return stored ? JSON.parse(stored) : [];
+  try {
+    if (typeof window === "undefined" || !window.localStorage) return [];
+    const stored = window.localStorage.getItem("Installed");
+    return stored ? JSON.parse(stored) : [];
+  } catch (err) {
+    // if parsing fails or access to localStorage is blocked, return empty array
+    // console.error can be useful during debugging; kept minimal for production
+    console.error("getInstall error:", err);
+    return [];
+  }
 };
 
 const addToInstalled = (id) => {

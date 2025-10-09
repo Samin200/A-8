@@ -1,6 +1,7 @@
 import { faFacebook, faLinkedinIn, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
       <div className="flex justify-between items-center lg:mx-[80px] border-b border-gray-600 pb-[24px] max-sm:px-5">
         <div className="flex items-center gap-1">
           <div>
-            <img className="w-[40px]" src="/src/assets/logo.png" alt="" />
+            <img className="w-[40px]" src={logo} alt="" />
           </div>
           <div className="font-bold text-[16px]">HERO.IO</div>
         </div>
