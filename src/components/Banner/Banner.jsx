@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
         <>
-           <div className="flex flex-col gap-[16px]">
+           <div className="flex flex-col gap-[40px] sm:gap-[16px]">
         <div className=" text-center font-black lg:text-[72px] text-[#192F45] text-5xl">
           We Build <br />
           <span className="text-transparent bg-linear-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text">

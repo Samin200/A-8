@@ -5,7 +5,7 @@ import Apps from "../../components/Banner/BannerApps";
 
 const Home = () => {
   return (
-    <div className="bg-[#F5F5F5] py-[80px] flex flex-col gap-[40px] items-center">
+    <div className="bg-[#F5F5F5] py-[40px] sm:py-[80px] flex flex-col gap-[40px] items-center max-sm:px-[20px]">
       <Banner></Banner>
       <BannerStatus></BannerStatus>
       <Apps></Apps>

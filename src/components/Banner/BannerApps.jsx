@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
-import { useLoaderData } from "react-router";
-import AppCard from "../Apps/App";
+import { NavLink, useLoaderData } from "react-router";
+import AppCard from "../Apps/AppCard";
 
 const Apps = () => {
   const apps = useLoaderData();
@@ -14,7 +14,9 @@ const Apps = () => {
           <AppCard key={app.id} app={app}></AppCard>
         ))}
       </div>
-      <div className="bg-linear-to-br from-[#632EE3] to-[#9F62F2] w-fit mx-auto px-[39px] py-[14.5px] rounded-[6px] mt-[40px]">Show All</div>
+      <div className="bg-linear-to-br from-[#632EE3] to-[#9F62F2] w-fit mx-auto px-[39px] py-[14.5px] rounded-[6px] mt-[40px]">
+        <NavLink to={'/Apps'} >Show All</NavLink>
+      </div>
     </div>
   );
 };

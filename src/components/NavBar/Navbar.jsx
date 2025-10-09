@@ -4,6 +4,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Navbar.css";
 import { useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router";
 const Navbar = () => {
   const [drawer , setDrawer] = useState(false);
   const handleDrawer = () => {
@@ -19,9 +20,9 @@ const Navbar = () => {
         <div className=" text-[16px] text-transparent bg-linear-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text  font-bold">HERO.IO</div>
       </div>
       <div className={`flex max-sm:flex-col items-center sm:gap-8 font-medium max-sm:absolute max-sm:hidden  ${drawer ? 'show-menu max-sm:bg-gray-300' : 'max-sm:hidden'}`}>
-        <div className={`hover-effect `}>Home</div>
-        <div className={`hover-effect `}>Apps</div>
-        <div className={`hover-effect `}>Installation</div>
+        <NavLink to={'/'} className={`hover-effect `}>Home</NavLink>
+        <NavLink to={'/Apps'} className={`hover-effect `}>Apps</NavLink>
+        <NavLink to={'/Install'} className={`hover-effect `}>Installation</NavLink>
       </div>
       <button className="flex items-center gap-2.5 py-[11.5px] px-[15.5px] bg-gradient-to-br from-[#632EE3] to-[#9F62F2] text-white rounded-[8px] cursor-pointer font-semibold ">
         <div className=" text-[20px]">

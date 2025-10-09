@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-const ErrorPage = () => {
+const AppNotFound = () => {
   return (
     <div className=" py-[40px]  sm:py-[80px] bg-[#F5F5F5] flex flex-col items-center max-sm:px-[20px]">
-        <div><img src="/assets/error-404.png" alt="" /></div>
+        <div><img src="/assets/App-Error.png" alt="" /></div>
       <div className="font-bold text-[48px] text-[#001931] text-center  pb-[16px] text-wrap ">
         Oops, page not found!
       </div>
@@ -18,4 +18,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default AppNotFound;
