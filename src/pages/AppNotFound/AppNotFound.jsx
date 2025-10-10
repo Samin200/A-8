@@ -9,10 +9,10 @@ const AppNotFound = () => {
         <img src={appError} alt="" />
       </div>
       <div className="font-bold text-[48px] text-[#001931] text-center  pb-[16px] text-wrap ">
-        Oops, page not found!
+        OPPS!! APP NOT FOUND
       </div>
       <div className="text-center text-wrap text-[20px] text-[#627382] ">
-        The page you are looking for is not available.
+        The App you are requesting is not found on our system.  please try another apps
       </div>
       <div className="bg-linear-to-br from-[#632EE3] to-[#9F62F2] w-fit mx-auto px-[39px] py-[14.5px] rounded-[6px] mt-[20px]">
         <NavLink to={"/"}>Go Back!</NavLink>

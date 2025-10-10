@@ -2,7 +2,8 @@ import InstalledAppsCard from "../../components/Apps/InstalledAppsCard";
 import { InstalledAppsContext } from "../../components/Context/Context";
 import { useContext, useEffect, useState, useMemo } from "react";
 import { getInstall } from "../../components/localStorage/localStorage";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigation } from "react-router";
+import Loader from "../../components/Loader/Loader";
 
 const Install = () => {
   const [installedApps] = useContext(InstalledAppsContext);
@@ -10,16 +11,16 @@ const Install = () => {
   const [sortedApps, setSortedApps] = useState([]);
   const [isSorting, setIsSorting] = useState(false);
 
-const parseCount = (value) => {
-  if (typeof value === "number") return value;
-  if (value.includes("B")) return parseFloat(value) * 1_000_000_000;
-  if (value.includes("M")) return parseFloat(value) * 1_000_000;
-  if (value.includes("K")) return parseFloat(value) * 1_000;
-  return parseFloat(value);
-};
-
+  const parseCount = (value) => {
+    if (typeof value === "number") return value;
+    if (value.includes("B")) return parseFloat(value) * 1_000_000_000;
+    if (value.includes("M")) return parseFloat(value) * 1_000_000;
+    if (value.includes("K")) return parseFloat(value) * 1_000;
+    return parseFloat(value);
+  };
 
   const appsFromLoader = useLoaderData();
+  const navigation = useNavigation();
 
   const memoApps = useMemo(() => appsFromLoader || [], [appsFromLoader]);
 
@@ -29,7 +30,6 @@ const parseCount = (value) => {
 
     let baseApps = installedApps;
 
-    // If installedApps isn't populated (e.g. on refresh), build it from loader data and installed ids
     if (
       (installedApps.length === 0 || !installedApps) &&
       installedIds.length > 0
@@ -59,7 +59,7 @@ const parseCount = (value) => {
     setIsSorting(false);
   }, [sortOrder, installedApps, memoApps]);
 
-;
+  if (navigation.state === "loading") return <Loader />;
 
   return (
     <div className="bg-[#F5F5F5] py-[40px] sm:py-[80px] flex flex-col max-sm:px-[20px]">
@@ -90,9 +90,7 @@ const parseCount = (value) => {
             No apps installed yet.
           </div>
         ) : (
-          sortedApps.map((app) => (
-            <InstalledAppsCard key={app.id} app={app} />
-          ))
+          sortedApps.map((app) => <InstalledAppsCard key={app.id} app={app} />)
         )}
       </div>
     </div>

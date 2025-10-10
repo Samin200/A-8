@@ -13,13 +13,13 @@ const AppCard = ({ app }) => {
     <NavLink
       onClick={() => handleUpdateState()}
       to={`/App/${app.id}`}
-      className="text-[#001931] p-[16px] bg-white rounded-[16px] flex flex-col gap-[16px] items-start max-sm:mx-[30px]"
+      className=" text-[#001931] p-[16px] bg-white rounded-[16px] flex flex-col gap-[16px] items-start max-sm:mx-[30px]"
     >
-      <div>
+      <div className="w-full">
         <img
-          className="w-[260px] sm:w-[300px] sm:h-[300px]"
+          className="w-full sm:w-[300px] h-auto sm:h-[300px] object-cover rounded"
           src={app.image}
-          alt=""
+          alt={app.title}
         />
       </div>
       <div className="">{app.title}</div>

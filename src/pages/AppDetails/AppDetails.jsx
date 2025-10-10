@@ -41,7 +41,6 @@ const AppDetails = () => {
       window.localStorage.setItem("Installed", JSON.stringify(updatedIds));
     }
 
-    // Prefer using loader-provided apps (useLoaderData in routes) if available via 'apps'
     const allApps =
       Array.isArray(apps) && apps.length
         ? apps
@@ -109,7 +108,7 @@ const AppDetails = () => {
             <button
               onClick={handleInstalledApps}
               disabled={isInstalled}
-              className={`text-white text-[16px] font-semibold py-[12px] px-[16px] rounded-[5px] ${
+              className={`max-sm:w-full text-white text-[16px] font-semibold py-[12px] px-[16px] rounded-[5px] ${
                 isInstalled
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-[#00D390] hover:bg-[#16a678]"
