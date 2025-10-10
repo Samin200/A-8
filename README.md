@@ -3,7 +3,7 @@
 Hero IO is a responsive web application that showcases a curated collection of mobile apps with install/uninstall functionality, live search, sorting, and detailed analytics. Built with React, Tailwind CSS, and DaisyUI, it delivers a polished user experience with persistent state management and dynamic UI feedback.
 
 ## 🚀 Live Demo
-[Visit the deployed site](https://your-deployment-url.netlify.app)
+[Visit the deployed site](https://dreamy-sprite-ce4b04.netlify.app/)
 
 ## 📦 Technologies Used
 - React
